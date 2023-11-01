@@ -1,5 +1,10 @@
 package org.example;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+
+import java.util.List;
+
 public interface Action {
-    Properties properties();
+    @JacksonXmlElementWrapper(localName = "properties")
+    List<Property> properties();
 }

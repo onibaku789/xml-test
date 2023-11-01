@@ -2,6 +2,7 @@ package org.example;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import org.immutables.value.Value;
 
@@ -13,4 +14,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @JsonDeserialize(as = org.example.ImmutableStore.class)
 @JacksonXmlRootElement(localName = "delete")
 public interface Store extends Action {
+    @JacksonXmlProperty(isAttribute = true, localName = "id")
+    String id();
 }
